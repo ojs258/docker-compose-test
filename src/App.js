@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+  const [text, setText] = useState("");
+  const url = '/hello'
+  const showText = () => {
+    fetch(url,{
+      method:"GET",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      setText(data.msg);
+    })
+  }
+
+  return(
+      <div>
+        <h2>안녕</h2>
+        <button onClick={showText}> 요청 </button>
+        <h1>{text}</h1>
+      </div>
+  )
 }
-
-export default App;
