@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://host.docker.internal:8081")
 public class HelloController {
     @GetMapping("/hello")
     public ResponseEntity<MsgDto> hello(){

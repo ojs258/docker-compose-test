@@ -35,5 +35,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy" : "http://host.docker.internal:8081"
+  "proxy" : "http://34.64.55.168:8081"
 }
