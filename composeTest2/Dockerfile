@@ -28,7 +28,7 @@ WORKDIR /app
 
 # /app Diretory하위에 Jar파일의 이름을 * 와일드카드로 찾아서 복사해
 # app.jar로 만들어 놓는다.
-COPY --from=builder /app/build/libs/*.jar app.jar
+COPY --from=builder /app/build/libs/composeTest2.jar app.jar
 
 # 복사 해둔 Jar파일을 도커 이미지로 빌드한다.
 CMD ["java", "-jar", "app.jar"]
