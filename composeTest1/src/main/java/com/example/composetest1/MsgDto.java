@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class MsgDto {
-    String msg = "compose push test 4";
+    String msg = "compose push test 5";
 }
